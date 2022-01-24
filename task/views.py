@@ -17,9 +17,9 @@ def index(request):
             form.save()
             messages.add_message(request, messages.INFO, f"Привіт {username}!")
     form = UsersForm()
-    return render(request, '/Users/nikita/projects/task/templates/index.html', {'form': form})
+    return render(request, 'task/index.html', {'form': form})
 
 
 def users(request):
     users = Users.objects.all()
-    return render(request, 'templates/users_list.html', {'users': users})
+    return render(request, 'task/users_list.html', {'users': users})
